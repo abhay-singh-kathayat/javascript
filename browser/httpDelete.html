@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="one">
+        <input type="text" id="one1">
+        <input type="text" id="one2">
+        <input type="text" id="one3">
+        <button onclick="save()"></button>
+    </form>
+
+    <script>
+        const httpDelete = (url, callback, err = console.error) => {
+        const request = new XMLHttpRequest();
+        request.open('DELETE', url, true);
+        request.onload = () => callback(request);
+        request.onerror = () => err(request);
+        request.send();
+        };
+        httpDelete('https://jsonplaceholder.typicode.com/posts/1', request => {
+        console.log(request.responseText);
+        });
+    </script>
+</body>
+</html>

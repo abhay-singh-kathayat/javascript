@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="one">
+        <input type="text" id="two">
+        <input type="text" id="three">
+        <input type="text" id="four">
+        <button type="button" onclick="hello()">Submit Data</button>
+    </form>
+    <script>
+        function hello(){
+        const httpPost = (url, data, callback, err = console.error) =>{
+            const request = new XMLHttpRequest();
+            request.open('POST',url,true);
+            request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+            request.onlode = () => callback(request.responseText);
+            request.onerror = () => err(request);
+            request.send(data);
+        }
+
+        const newPost = {
+            userId: document.getElementById("one").value,
+            id: document.getElementById("two").value,
+            title: document.getElementById("three").value,
+            body: document.getElementById("four").value
+        };
+        const data = JSON.stringify(newPost);
+        httpPost(
+        'https://jsonplaceholder.typicode.com/posts',
+        data,
+        console.log
+        );
+        console.log(data)
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="ilove.png" alt="">
+    <img src="ilove.png" alt="">
+    <img src="ilove.png" alt="">
+    <img src="ilove.png" alt="">
+    <img src="ilove.png" alt="">
+    <img src="ilove.png" alt="">
+    <img src="ilove.png" alt=""><img src="ilove.png" alt="">
+    <img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt=""><img src="ilove.png" alt="">
+    
+    <script>
+        const getImages = (el, includeDuplicates = false) => {
+        const images = [...el.getElementsByTagName('img')].map(img =>
+        img.getAttribute('src')
+        );
+       return includeDuplicates ? images : [...new Set(images)];
+      };
+
+      getImages(document, true); 
+      console.log(getImages(document, true));
+      getImages(document, false);
+      console.log(getImages(document, false))
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+  <form action="">
+    <input type="text" id="abhay">
+    <input type="text" id="abhay1">
+    <input type="text" id="abhay2">
+    <input type="text" id="abhay3">
+    <input type="button" id="submit" value="SUB" onclick="httpPut()">
+  </form>
+    <script>
+
+      const httpPut = (url, data, callback, err = console.error) => {
+        const request = new XMLHttpRequest();
+        request.open("PUT", url, true);
+        request.setRequestHeader(
+          "Content-type",
+          "application/json; charset=utf-8"
+        );
+        request.onload = () => callback(request);
+        request.onerror = () => err(request);
+        request.send(data);
+      };
+
+      const password = 'fooBaz';
+      const data = JSON.stringify({
+      id: 1,
+      title: 'foo',
+      body: 'bar',
+      userId: 1
+});
+  httpPut('https://jsonplaceholder.typicode.com/posts/1', data, request => {
+    console.log(request.responseText);
+  }); 
+
+    </script>
+  </body>
+</html>

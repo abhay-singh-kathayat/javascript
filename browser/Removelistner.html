@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button >Hello</button>
+    <button >Hello</button>
+    <button >Hello</button>
+    <button >Hello</button>
+    <button >Hello</button>
+    <button >Hello</button>
+    <button >Hello</button>
+    <button >Hello</button>
+    <button >Hello</button>
+    <script>
+      const removeEventListenerAll = (
+        targets,
+        type,
+        listener,
+        options,
+        useCapture
+      ) => {
+        targets.forEach((target) =>
+          target.removeEventListener(type, listener, options, useCapture)
+        );
+      };
+
+      const linkListener = () => console.log('Clicked a link');
+      document.querySelector('button').addEventListener('click', linkListener);
+      removeEventListenerAll(document.querySelectorAll('button'), 'click', linkListener);
+    </script>
+  </body>
+</html>
