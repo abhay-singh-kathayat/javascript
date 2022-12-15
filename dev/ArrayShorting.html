@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Array Data Swapping in Javascript
+       let dataArray = [40,5,5555,32,234,43,5345,345];
+       for(i=0;i<dataArray.length;i++){
+        console.log(dataArray);
+         for(j=0;j<dataArray.length;j++){
+            if(dataArray[j]>dataArray[j+1]){
+                //dataArray[40]>dataArray[5];
+                let tempVar =  dataArray[j];
+                //let tempVar =  dataArray[40];
+                dataArray[j]= dataArray[j+1];
+              // dataArray[40]= dataArray[5];
+                dataArray[j+1]= tempVar;
+             // dataArray[5]= 40;
+         }
+       }
+    }
+   console.log(dataArray);
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="test"></p>
+  <p id="test1"></p>
+  <script>
+    let n=5;
+
+    let string = '';
+
+    for(let i=0;i<n;i++){
+      for(let j=0;j<n;j++){
+        string +="*";
+      }
+      string += "</br>";
+    }
+
+    document.getElementById("test").innerHTML = string;
+    console.log(string);
+
+
+
+    let m = 5;
+    let h=3;
+    let secondStructure  = '';
+
+    let string2 = "";
+
+    for(k=0;k<m;k++){
+      for(l=0;l<h;l++){
+        secondStructure +="*";
+      }
+      secondStructure +="</br>";
+    }
+
+    document.getElementById("test1").innerHTML =secondStructure;
+  </script>
+</body>
+</html>

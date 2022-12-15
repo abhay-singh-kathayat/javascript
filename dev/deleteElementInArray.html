@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //delete element from array withoot any function
+    //     let arrayDta = [12, 5, 33, 43, 88, 99];
+    //     let deletePosition = 2;
+    //     for (i = deletePosition; i < arrayDta.length; i++) {
+    //         if(i==deletePosition)arrayDta[i] = arrayDta[i - 1];
+    //     }
+
+    //   console.warn(arrayDta);
+    //     //remove duplicate element from array 
+    //     uniqueArray = arrayDta.filter(function(item, pos) {
+    //    return arrayDta.indexOf(item) == pos;
+    // });
+   
+    //console.log(uniqueArray);
+
+
+    //2nd try to another way
+    let data = [43,22,9,7,90];
+    let position = 2;
+    for(let i=position;i<data.length;i++){
+        data[i]= data[i+1];
+    }
+   
+    data.length = data.length -1;
+    console.log(data);
+    </script>
+</body>
+
+</html>

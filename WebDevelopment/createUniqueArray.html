@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //https://www.tutorialstonight.com/javascript-sort-an-array-of-objects
+    let arr = [234,234,23,4,23,4,2,34,23,4,23,4,23,4,23,4,"Abhay","Abhay"];
+    let unique1 = new Set(arr);
+
+    let uniqueueArray = Array.from(unique1);
+   // console.log(uniqueueArray);
+
+
+    //Remove Duplicates Using Reduce Metod
+
+    let unique = arr.reduce(function(acc, current){
+      if(acc.indexOf(current)===-1){
+        acc.push(current);
+      }
+      return acc;
+    },[])
+
+   // console.log(unique);
+
+
+  //reduce() Method With includes() Method
+  let unique2 = [234,234,23,4,23,4,2,34,23,4,23,4,23,4,23,4,"Abhay","Abhay"];
+  var array =unique2.reduce(function(array,current){
+   return array.includes(current) ? array: [...array, current];
+  }, [])
+  console.log(array);
+    
+
+  //using map function
+  var arr32 = [1, 2, 1, 4, 3, 3, 1, 2, 4];
+
+// using map method to remove duplicates
+var unique32 = arr.map((item, index) => {
+               return arr.indexOf(item) === index ? item : null;
+             }).filter(item => item !== null);
+
+console.log(unique32);
+    </script>
+</body>
+</html>

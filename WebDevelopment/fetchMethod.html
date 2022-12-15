@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<img src="" alt="" id="img">
+<body>
+    <script>
+    fetch('https://api.instantwebtools.net/v1/airlines')
+    .then((response)=> response.json())
+    .then((data)=>{
+     for(var x in data){
+        console.log(data[x]);
+        document.write(`${data[x].name} -${data[x].country} <br>`);
+        //${data[x].country.name} itrate multiple value on this type
+    
+
+     }
+    })
+   .catch((error)=>document.write("Can't Fetch Data"));
+    
+   
+
+    </script>
+</body>
+</html>

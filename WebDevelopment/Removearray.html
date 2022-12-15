@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [12, 24, 6, 88, 99, 56];
+      let remove = 88;
+
+      //     array = array.filter(function(index,value){
+      //       return index !==88;
+      //     })
+
+      //    array = array.filter((index,value)=>{
+      //      return index!= 88;
+      //    })
+
+      //    console.log(array);
+
+      //Remove Element Using For Loop in array
+      for (let index = 0; index < array.length; index++) {
+        if (array[index] === remove) {
+          array.splice(index, 1);
+          index--;
+        }
+      }
+
+      //Remove duplicates in array in javascript using filter
+      let arrydata = [32, 32, 32, 67, 9, 9, 9, 9, 9, 9];
+      arrydata = arrydata.filter(function (Element, index, array) {
+        return array.indexOf(Element) === index;
+      });
+
+      //Remove Object From array
+      let arrobj = [
+        { name: "John", age: 30 },
+        { name: "Mike", age: 20 },
+        { name: "Jane", age: 25 },
+      ];
+
+      let minAge = 28;
+
+      arrobj = arrobj.filter(function(Element,index,array){
+        return Element.age >= minAge;
+      })
+      console.log(arrobj);
+
+
+      //push some elements in array
+      let Array = [23,23,23,23,23];
+      let Array2 = [23,23,23,23];
+    
+      //This is very Important and Useful mEthod to Know anymore.
+      Array.push(...Array2);
+      console.log(Array);
+    </script>
+  </body>
+</html>

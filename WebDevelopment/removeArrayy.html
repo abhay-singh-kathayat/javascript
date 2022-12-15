@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // remove duplicates from array
+      let arr = [1, 2, 1, 4, 3, 3, 1, 2, 4];
+      var operation = 1000,
+        repeat = 10;
+      var avg = 0,
+        sum = 0;
+      var start, end;
+
+      // check the performance of each method
+
+      // method 1
+      for (let i = 0; i < repeat; i++) {
+        start = new Date().getTime();
+        for (let i = 0; i < operation; i++) {
+          let unique = [...new Set(arr)];
+        }
+        end = new Date().getTime();
+        sum += end - start;
+      }
+      avg = sum / repeat;
+      console.log(`Method 1: ${avg}ms`);
+
+      // method 2
+      for (let i = 0; i < repeat; i++) {
+        start = new Date().getTime();
+        for (let i = 0; i < operation; i++) {
+          let unique = arr.filter((item, index) => {
+            return arr.indexOf(item) === index;
+          });
+        }
+        end = new Date().getTime();
+        sum += end - start;
+      }
+      avg = sum / repeat;
+      console.log(`Method 2: ${avg}ms`);
+
+      // method 3.1
+      for (let i = 0; i < repeat; i++) {
+        start = new Date().getTime();
+        for (let i = 0; i < operation; i++) {
+          let unique = arr.reduce((acc, curr) => {
+            if (acc.indexOf(curr) === -1) {
+              acc.push(curr);
+            }
+            return acc;
+          }, []);
+        }
+        end = new Date().getTime();
+        sum += end - start;
+      }
+      avg = sum / repeat;
+      console.log(`Method 3.1: ${avg}ms`);
+
+      // method 3.2
+      for (let i = 0; i < repeat; i++) {
+        start = new Date().getTime();
+        for (let i = 0; i < operation; i++) {
+          let unique = arr.reduce((acc, curr) => {
+            return acc.includes(curr) ? acc : [...acc, curr];
+          }, []);
+        }
+        end = new Date().getTime();
+        sum += end - start;
+      }
+      avg = sum / repeat;
+      console.log(`Method 3.2: ${avg}ms`);
+
+      // method 4
+      for (let i = 0; i < repeat; i++) {
+        start = new Date().getTime();
+        for (let i = 0; i < operation; i++) {
+          let unique = arr
+            .map((item, index) => {
+              return arr.indexOf(item) === index ? item : null;
+            })
+            .filter((item) => item !== null);
+        }
+        end = new Date().getTime();
+        sum += end - start;
+      }
+      avg = sum / repeat;
+      console.log(`Method 4: ${avg}ms`);
+    </script>
+  </body>
+</html>

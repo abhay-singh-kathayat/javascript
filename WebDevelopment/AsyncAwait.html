@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ //same like promis
+//promis => resolve , reject when resolve then uSe then Function and reject Then Reject
+//async Function return Promise
+//create async Function
+let test =  async function test(){
+    return "Hello";
+ }
+ test().then((result)=>{
+    console.log(result);
+ })
+
+
+ //async in arrow Function
+ let asyncFunction = async () => "Hello Abhay Bhay";
+ asyncFunction().then((result)=>{
+    console.log(result);
+ })
+
+
+    </script>
+    
+</body>
+</html>

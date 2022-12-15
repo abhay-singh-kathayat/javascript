@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let dataSet = [22,13,56];
+        // let dataSet2 =[43,34,34];
+        // let thirdArray = [];
+
+        // for(i=0;i<dataSet.length;i++){
+        //     thirdArray[i] = dataSet[i];
+        // }
+        // for(i=0;i<dataSet2.length;i++){
+        //     thirdArray[thirdArray.length] = dataSet2[i];
+        // }
+        // console.log(thirdArray);
+
+
+        //concat array another  type using while loop
+        let array1 = [1,3,5,6,8,9];
+        let array2 = [3,4,6,7];
+        let array3 = [];
+        let a1 = 0;
+        let a2 = 0;
+        let a3 = 0;
+        while(a1<array1.length && a2<array2.length){
+           if(array1[a1]<array2[a2])
+           {
+            array3[a3]= array1[a1];
+            console.log(array3[a3]);
+            a1++;
+           }else{
+            array3[a3]=array2[a2];
+            console.log(array3[a3]);
+            a2++;
+           }
+           a3++;
+        }
+      
+        while(a1<array1.length){
+            array3[a3]= array1[a1];
+            a1++;
+            a3++;
+
+        }
+
+        console.log(array3);
+
+        //space complexcity vs time Complexcity
+
+    </script>
+</body>
+</html>

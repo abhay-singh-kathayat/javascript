@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p1 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+              console.log("The First Promise is Resolved");
+              resolve(10);
+            },1*1000)
+        })
+        let p2 = new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                console.log("The Second Promise is Resolved");
+              resolve(10);
+            }, 2*1000);
+        })
+        let p3 = new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                console.log("The Third Promise is Resolved");
+              resolve(30);
+            }, 3*1000);
+        })
+
+         let total = 0;
+        Promise.all([p1,p2,p3]).then((result)=>{
+            for (const i in result) {
+                total += result[i];
+            }
+          console.log(`Result ${total}`);
+        }).catch((error)=>{
+          console.log(`Error ${result}`);
+        });
+    </script>
+</body>
+</html>

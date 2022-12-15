@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data = [];
+        let currentSize = data.length;
+
+        function push(newVal){
+         //add new value under data tab 
+          data[currentSize] = newVal;
+          //this is for next value we can Add
+          currentSize += 1;
+
+        }
+
+        function pop(){
+        //store last item in loop
+         lastRemoveItem = data[currentSize-1];
+        //remove value from aarray using currentSize -1
+          currentSize -=1;
+          data.length = currentSize;
+          return lastRemoveItem;
+        }
+
+        function reverceStr(item){
+          for(i=0;i<item.length;i++){
+            push(item[i]);
+          }
+          for(i=0;i<item.length;i++){
+          
+           item[i] = pop();
+          }
+        }
+
+        let string = "abhaysinghkathayat";
+        string = string.split('');
+        reverceStr(string);
+        console.log(string);
+
+        // push(20);
+        // push(20);
+        // push(20);
+        // push(20);
+        // push(20);
+        // pop();
+        // pop();
+        // pop();
+      //console.warn(data);
+    </script>
+</body>
+</html>

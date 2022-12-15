@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p id="testdata"></p>
+<body>
+    <script>
+      let numbers = 5;
+      let conctString = '';
+
+      for(let i=0; i<numbers; i++){
+        for(let j=0; j<numbers; j++){
+            if(i===0 || i===numbers -1){
+                conctString +="*";
+            }else{
+                if(j===0 || j===numbers -1){
+                    conctString +="*";
+                }else{
+                    conctString +=" ";
+                }
+            }
+        }
+        conctString += "\n";
+      }
+
+      document.getElementById("testdata").innerHTML = conctString;
+      console.log(conctString)
+    </script>
+</body>
+</html>

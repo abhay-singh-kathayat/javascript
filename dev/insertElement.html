@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let data = [12,22,55,66,77,88];
+        // let addElement = 1;
+        // let position = 4;
+        // for(let i=data.length-1; i>=0;i--){
+        //      console.log(data[i]);
+        //      //5>=4
+        //   if(i>=position){
+        //     //data[4+1] = data[4]
+        //     data[i+1] = data[i];
+        //     if(i==position){
+        //         data[i] = addElement;
+        //     }
+        //   }
+        // }
+
+        // console.warn(data);
+
+
+
+        //Second Way
+        // function addElement(){
+        //     let dataArr = [10,32,67,55,34];
+        //     console.log(dataArr);
+        //     let position = document.getElementById("position").value;
+        //     let changeDataType = parseInt(position);
+        //     let addElement = document.getElementById("addElement").value;
+        //     let changeDataTypeSec = parseInt(addElement);
+        //    for(let i=dataArr.length-1;i>=0;i--){
+        //     console.log(dataArr[i]);
+        //     if(i==changeDataType){
+        //        dataArr[i] = changeDataTypeSec;
+        //     }
+        //    }
+        //    console.log(dataArr);
+        // }
+
+
+        let testArray = [23,23,23,23,23,23];
+        let index = 2;
+        let Element =1000;
+        for(i=0;i<testArray.length;i++){
+          if(i == index){
+           testArray[i] = Element;
+        }
+    }
+    console.log(testArray);
+    </script>
+    <input type="text" id="position" placeholder="enter the position">
+    <input type="text" id="addElement" placeholder="enter new Element">
+    <button onclick="addElement()">Add</button>
+</body>
+</html>

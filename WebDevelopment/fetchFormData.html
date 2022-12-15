@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" id="myform">
+      tittle <input type="text" name="" id="tittle" /> BodyText
+      <input type="text" name="" id="BodyText" /> UserId
+      <input type="text" name="" id="UserId" />
+      <input type="submit" id="saveForm" />
+
+      <script>
+        document
+          .getElementById("saveForm")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            // var object = {
+            //   tittle: document.getElementById("tittle").value,
+            //   body: document.getElementById("BodyText").value,
+            //   userId: document.getElementById("UserId").value,
+            // };
+
+            fetch("https://jsonplaceholder.typicode.com/posts", {
+              method: "post",
+              body: new FormData(document.getElementById("myform")),
+              headers: {
+                "Content-type": "application/x-www-form-urlencoded",
+              },
+            })
+              .then((response) => response.json())
+              .then((json) => console.log(json));
+          });
+      </script>
+    </form>
+    <script>
+        //check fetch is Working is not
+        if(window.fetch){
+          //fetch Case
+        }else{
+         //http case
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //method to convert array
+      let str = "my name is abahy";
+      // str = str.split(" ");
+      // console.log(str);
+
+      //Another way we are using saprate operator
+      //str =[...str];
+      //console.log(str);
+
+      //same Array.from(str);
+
+      //convert to array using ragular expansion
+      var test = str.match(/\w+/g);
+      console.log(test);
+
+      // Using var arr = Object.assign([], str); properties
+
+      //Using Map Object Keys
+      let dataSet = "Hello India";
+      let keys = Object.keys(dataSet);
+    
+      // use map() to get the values of the keys
+      var arr = keys.map((key) => dataSet[key]);
+      console.log(arr);
+    </script>
+  </body>
+</html>

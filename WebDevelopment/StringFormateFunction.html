@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // js Formate String 
+        String.prototype.format = function (){
+           var args = arguments;
+          return this.replace(/{([0-9]+)}/g,function(match,index){
+              return typeof args[index] == "undefined" ? match:args[index];
+          });
+        }
+     console.log('{0} is {1} years Old and Likes {2}'.format('john',30,"pizzA"));
+    </script>
+</body>
+</html>
