@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="username">Username:</label>
+      <input id="username" name="username" />
+
+      <label for="password">Password:</label>
+      <input id="password" class="my-element" name="password" type="password" />
+      <span id="password-message" style="display: none">Caps Lock is on</span>
+
+
+      <div id="helloword">Hello Word</div>
+
+    </form>
+
+    <script>
+  
+
+  const addMultipleListeners = (el, types, listener, options, useCapture) => {
+  types.forEach(type =>
+    el.addEventListener(type, listener, options, useCapture)
+  );
+};
+
+addMultipleListeners(
+  document.querySelector('#helloword'),
+  ['click', 'mousedown','onchange'],
+  () => { console.log("Hello Word") }
+);
+
+//copy clipbord
+const copyToClipboard = str => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  const selected =
+    document.getSelection().rangeCount > 0
+      ? document.getSelection().getRangeAt(0)
+      : false;
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  if (selected) {
+    document.getSelection().removeAllRanges();
+    document.getSelection().addRange(selected);
+  }
+};
+    </script>
+  </body>
+</html>
